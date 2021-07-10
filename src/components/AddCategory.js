@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const AddCategory = ({setCategories}) => {
 
-    const [inputValue, setInputValue] = useState('Hola Mundo');
+    const [inputValue, setInputValue] = useState('Add Category');
 
     const handleInputChange = (e) => {
         setInputValue(e.target.value);
@@ -12,7 +12,7 @@ const AddCategory = ({setCategories}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (inputValue.trim().length > 2) {
-            setCategories( categories => [...categories, inputValue] );
+            setCategories( categories => [inputValue, ...categories] );
             setInputValue('');
         }
     }
